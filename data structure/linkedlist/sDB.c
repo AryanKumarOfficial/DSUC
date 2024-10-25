@@ -35,6 +35,11 @@ int main()
         scanf("%d", &ch);
     }
 
+    // deletion at beginning
+    temp = head;
+    head = head->next;
+    free(temp);
+
     temp = head;
     while (temp != NULL)
     {

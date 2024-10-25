@@ -35,6 +35,14 @@ int main()
         scanf("%d", &ch);
     }
 
+    // insertion at begaining
+
+    newnode = (struct node *)malloc(sizeof(struct node));
+    printf("Enter the data to insert:\n");
+    scanf("%d", &newnode->data);
+    newnode->next = head;
+    head = newnode;
+
     temp = head;
     while (temp != NULL)
     {

@@ -10,7 +10,7 @@ struct node
 int main()
 {
 
-    struct node *newnode, *head, *temp;
+    struct node *newnode, *head, *temp, *prev;
     head = 0;
     int ch = 1;
 
@@ -35,6 +35,16 @@ int main()
         scanf("%d", &ch);
     }
 
+    // deletion at end
+
+    temp = head;
+    while (temp->next->next != 0)
+    {
+        temp = temp->next;
+    }
+    prev = temp->next;
+    temp->next = 0;
+    free(prev);
     temp = head;
     while (temp != NULL)
     {

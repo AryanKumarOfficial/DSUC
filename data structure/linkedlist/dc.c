@@ -5,22 +5,22 @@ struct node
 {
     int data;
     struct node *next;
+    struct node *prev;
 };
 
 int main()
 {
-
     struct node *newnode, *head, *temp;
-    head = 0;
     int ch = 1;
-
+    head = 0;
     while (ch)
     {
         newnode = (struct node *)malloc(sizeof(struct node));
-        printf("Enter the data for node:\n");
-        scanf("%d", &newnode->data);
         newnode->next = 0;
-        if (head == NULL)
+        newnode->prev = 0;
+        printf("Enter the data to be inserted:\n");
+        scanf("%d", &newnode->data);
+        if (head == 0)
         {
             head = newnode;
             temp = newnode;
@@ -28,13 +28,13 @@ int main()
         else
         {
             temp->next = newnode;
-            temp = newnode;
+            newnode->prev = temp;
+            temp = temp->next;
         }
 
-        printf("Do you want to continue insertion(0/1)");
+        printf("Do you want to continue ?(1/0)");
         scanf("%d", &ch);
     }
-
     temp = head;
     while (temp != NULL)
     {
