@@ -26,7 +26,7 @@ int main()
         }
         else
         {
-            return;
+            return -1;
         }
         printf("Do you want to continue insertion(0/1): ");
         scanf("%d", &ch);
@@ -36,7 +36,8 @@ int main()
     printf("\nElements of queue are as:\n\n");
     while (rear < n - 1)
     {
-        printf(list[rear]);
+
+        printf("%d", list[rear]);
         rear++;
     }
 
